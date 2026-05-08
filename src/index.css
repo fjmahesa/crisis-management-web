@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+/* PAKSA TAILWIND V4 MENGENALI CLASS DARK */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Variabel warna kustom untuk digunakan di komponen */
+  --color-light-bg: #F8F9FA;
+  --color-dark-bg: #050505;
+}
+
+@layer base {
+  html {
+    /* Set default warna untuk Light Mode */
+    background-color: #F8F9FA;
+    color: #0F172A;
+    transition: all 0.7s ease-in-out;
+  }
+
+  /* Set default warna saat class .dark aktif */
+  html.dark {
+    background-color: #050505;
+    color: #ffffff;
+  }
+}
