@@ -1,107 +1,122 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../../context/ThemeContext'; // Import context tema
+// Import dua versi gambar
+import headerDark from '../../assets/header-dark.webp';
+import headerLight from '../../assets/header-light.webp';
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-};
+const fadeIn = (direction = "up") => ({
+  hidden: { 
+    opacity: 0, 
+    y: direction === "up" ? 30 : 0,
+    x: direction === "left" ? 30 : direction === "right" ? -30 : 0
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    x: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+  }
+});
 
 export default function Hero() {
+  const { theme } = useTheme(); // Ambil status tema saat ini
+
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center px-4 md:px-6 pt-12 md:pt-0 transition-colors duration-700">
+    <section className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 py-20 overflow-hidden transition-colors duration-700 bg-[#F8F9FA] dark:bg-[#050505]">
       
-      {/* LAPISAN LATAR BELAKANG JARINGAN */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        
-        {/* Grid Line: Berubah dari putih (dark) ke slate (light) */}
-        <div 
-          className="absolute inset-0 opacity-[0.05] md:opacity-[0.07] dark:opacity-[0.05]" 
+      {/* BACKGROUND ELEMENTS */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none text-slate-900 dark:text-white">
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
           style={{ 
-            backgroundImage: `
-              linear-gradient(to right, currentColor 1px, transparent 1px),
-              linear-gradient(to bottom, currentColor 1px, transparent 1px)
-            `,
-            backgroundSize: 'clamp(40px, 8vw, 80px) clamp(40px, 8vw, 80px)' 
-          }}
-        ></div>
-
-        {/* Dots Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.1] md:opacity-[0.15] dark:opacity-[0.1]" 
-          style={{ 
-            backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-            backgroundSize: 'clamp(40px, 8vw, 80px) clamp(40px, 8vw, 80px)',
-            backgroundPosition: '-0.5px -0.5px'
-          }}
-        ></div>
-
-        {/* Scanner Effect */}
-        <motion.div 
-          animate={{ y: ['0%', '100%'] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 w-full h-[20vh] bg-gradient-to-b from-transparent via-red-500/10 dark:via-red-500/5 to-transparent z-0"
-        />
-
-        {/* Vignette: Menyesuaikan dengan warna background Home.jsx */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8F9FA] dark:to-[#050505]"></div>
+            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundSize: '60px 60px' 
+          }}>
+        </div>
       </div>
 
-      {/* KONTEN UTAMA */}
-      <div className="max-w-7xl mx-auto relative z-10 text-center w-full">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        {/* KOLOM KIRI: TEKS & ACTION */}
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={{
-            visible: { transition: { staggerChildren: 0.1 } }
-          }}
+          variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+          className="text-left"
         >
-          {/* Badge Status */}
           <motion.div 
-            variants={fadeIn}
-            className="inline-flex items-center gap-2 px-3 py-1 mb-4 md:mb-8 border border-red-500/30 bg-red-500/5 dark:bg-red-500/10 rounded-full backdrop-blur-md"
+            variants={fadeIn("up")}
+            className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-red-500/30 bg-red-500/5 rounded-full backdrop-blur-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 md:h-2 w-1.5 md:w-2 bg-red-600"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </span>
-            <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-red-600 dark:text-red-500 font-mono">
-              Sistem Aktif // Titik_01
+            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-red-600 dark:text-red-500 font-mono">
+              Live Monitoring // Aktif
             </span>
           </motion.div>
           
           <motion.h1 
-            variants={fadeIn}
-            className="text-4xl sm:text-6xl md:text-8xl font-black mb-3 md:mb-6 tracking-tighter leading-tight md:leading-none text-[#0F172A] dark:text-white"
+            variants={fadeIn("up")}
+            className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-[0.95] text-[#0F172A] dark:text-white"
           >
-            MENGHUBUNGKAN <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-slate-900 to-slate-500 dark:from-white dark:to-white/40">
+            MENGHUBUNGKAN <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-red-900 dark:from-red-500 dark:to-white">
               TITIK KRITIS
             </span>
           </motion.h1>
 
           <motion.p 
-            variants={fadeIn}
-            className="text-slate-500 dark:text-slate-400 max-w-xs md:max-w-xl mx-auto mb-8 md:mb-12 text-[9px] md:text-[11px] leading-relaxed tracking-[0.15em] md:tracking-[0.3em] uppercase font-mono px-4"
+            variants={fadeIn("up")}
+            className="text-slate-500 dark:text-slate-400 max-w-lg mb-10 text-[11px] leading-relaxed tracking-[0.2em] uppercase font-mono"
           >
-            Resiliensi Terintegrasi Untuk Dunia Yang Kompleks.
+            Pusat komando pertahanan reputasi dan manajemen risiko strategis. Melindungi aset kritikal di era ketidakpastian global.
           </motion.p>
 
-          <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-6 px-6">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(220, 38, 38, 0.2)" }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto bg-red-600 text-white px-8 md:px-12 py-3 md:py-4 rounded-none font-black text-[10px] uppercase tracking-[0.2em] transition-all"
-            >
+          <motion.div variants={fadeIn("up")} className="flex flex-wrap gap-4">
+            <button className="bg-red-600 text-white px-8 py-4 font-black text-[10px] uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl shadow-red-600/20">
               Inisialisasi Protokol
-            </motion.button>
-            
-            <motion.button 
-              className="w-full sm:w-auto px-8 md:px-12 py-3 md:py-4 text-[10px] font-black uppercase tracking-[0.2em] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-            >
-              Peta Jaringan
-            </motion.button>
+            </button>
+            <button className="px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+              Eksplorasi Metodologi
+            </button>
           </motion.div>
         </motion.div>
+
+        {/* KOLOM KANAN: GAMBAR DENGAN LOGIKA TEMA */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn("left")}
+          className="relative group justify-self-center lg:justify-self-end"
+        >
+          <div className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-red-600 z-20 transition-all duration-500"></div>
+          <div className="absolute -bottom-3 -left-3 w-16 h-16 border-b-2 border-l-2 border-red-600 z-20 transition-all duration-500"></div>
+
+          <div 
+            className="relative overflow-hidden shadow-2xl shadow-black/40 border border-white/5"
+            style={{ clipPath: 'polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%)' }}
+          >
+            {/* LOGIKA PERGANTIAN GAMBAR */}
+            <motion.img 
+              key={theme} // Key penting agar Framer Motion tahu gambar berubah
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              src={theme === 'dark' ? headerDark : headerLight} 
+              alt="Strategic Crisis Agent" 
+              className="w-full h-auto max-w-lg object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+            />
+            
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent"></div>
+            
+            <div className="absolute bottom-8 right-12 font-mono text-[7px] text-white/50 tracking-[0.4em] uppercase hidden md:block">
+              {theme === 'dark' ? 'NIGHT_MODE // ACTIVE' : 'DAY_MODE // ACTIVE'}
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
