@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import useDarkMode from '../hooks/useDarkMode';
+// Menggunakan useTheme dari Context, bukan hook lokal
+import { useTheme } from '../context/ThemeContext'; 
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [theme, toggleTheme] = useDarkMode();
+  // Mengambil state global agar perubahan di Navbar langsung berdampak di sini
+  const { theme, toggleTheme } = useTheme();
 
   const socialLinks = [
     { icon: <FaLinkedinIn size={16} />, href: "#", label: "LinkedIn" },
@@ -20,13 +22,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           
-          {/* KOLOM 1: BRAND & SOSIAL MEDIA */}
+          {/* KOLOM 1: BRAND LOGO & SOSIAL MEDIA */}
           <div className="space-y-8">
             <div>
-              <Link to="/" className="text-xl font-black tracking-tighter text-[#0F172A] dark:text-white">
-                CRISIS<span className="text-red-600">MANAGEMENT</span>.ID
+              <Link to="/" className="inline-block">
+                {/* 1. key={theme} memastikan React me-render ulang tag img saat tema berubah
+                  2. Menggunakan Context API membuat logo ini berubah serentak dengan Navbar
+                */}
+                <img 
+                  key={theme}
+                  src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
+                  alt="Indonesia Crisis Management Logo" 
+                  className="h-14 md:h-16 w-auto object-contain transition-all duration-500"
+                />
               </Link>
-              <p className="mt-4 text-slate-500 dark:text-slate-400 text-xs leading-relaxed tracking-widest uppercase font-mono max-w-xs">
+              <p className="mt-6 text-slate-500 dark:text-slate-400 text-xs leading-relaxed tracking-widest uppercase font-mono max-w-xs">
                 Pusat komando pertahanan reputasi dan manajemen risiko strategis. Melindungi aset kritikal di era ketidakpastian.
               </p>
             </div>
@@ -48,7 +58,7 @@ export default function Footer() {
 
           {/* KOLOM 2: NAVIGASI */}
           <div className="space-y-6 md:pl-10">
-            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50">Direktori_Sistem</h4>
+            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50 font-bold">Direktori_Sistem</h4>
             <ul className="space-y-4 text-xs font-bold tracking-tight">
               <li><Link to="/layanan" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Layanan Utama</Link></li>
               <li><Link to="/metodologi" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Metodologi</Link></li>
@@ -59,7 +69,7 @@ export default function Footer() {
 
           {/* KOLOM 3: KONTAK */}
           <div className="space-y-6">
-            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50">Kontak_Darurat</h4>
+            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50 font-bold">Kontak_Darurat</h4>
             <div className="space-y-6">
               <div className="group cursor-pointer">
                 <p className="text-[10px] text-slate-500 font-mono uppercase mb-1">Enkripsi Email</p>

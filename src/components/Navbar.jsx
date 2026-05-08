@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import useDarkMode from '../hooks/useDarkMode';
+import { useTheme } from '../context/ThemeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, toggleTheme] = useDarkMode();
+  const { theme, toggleTheme } = useTheme();
 
   const menuVariants = {
     closed: {
@@ -28,6 +28,7 @@ export default function Navbar() {
       <Link to="/" className="z-[110] flex items-center">
         {/* Logika penukaran file berdasarkan theme */}
         <img 
+          key={theme}
           src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
           alt="Indonesia Crisis Management Logo" 
           className="h-10 md:h-16 w-auto object-contain transition-opacity duration-500"

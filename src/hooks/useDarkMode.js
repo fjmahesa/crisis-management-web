@@ -1,29 +1,26 @@
 import { useEffect, useState } from 'react';
 
 export default function useDarkMode() {
-  // 1. Paksa default ke 'light' jika belum ada di storage
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved ? saved : 'light'; 
-  });
+  // Ambil initial state dari localStorage agar konsisten
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     const root = window.document.documentElement;
-
+    
+    // Sinkronisasi class dark di tag <html>
     if (theme === 'dark') {
       root.classList.add('dark');
-      // Opsional: hapus class light jika ada
-      root.classList.remove('light'); 
     } else {
       root.classList.remove('dark');
-      root.classList.add('light');
     }
-
+    
+    // Simpan ke localStorage setiap kali state berubah
     localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme]); // Ini akan berjalan SETIAP KALI state theme berubah
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    // Mengubah state akan memicu re-render di Navbar dan Footer
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return [theme, toggleTheme];
