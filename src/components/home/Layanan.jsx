@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+// Perbaikan Import Ikon
+import { 
+  FaChartLine,    // Untuk Crisis Monitoring (Data & Trend)
+  FaUserSecret,   // Untuk Digital War Room
+  FaBullseye,     // Untuk Rapid Response (Tepat Sasaran)
+  FaComments,     // Untuk Narrative Control (Percakapan)
+  FaShieldAlt     // Untuk Reputation Recovery (Perlindungan)
+} from "react-icons/fa";
 
 export default function Layanan() {
   const [activeService, setActiveService] = useState(null);
@@ -7,26 +15,31 @@ export default function Layanan() {
   const layananData = [
     {
       judul: "Crisis Monitoring",
+      icon: <FaChartLine size={20} />, 
       desc: "Monitoring percakapan digital secara real-time melalui social listening, tracking keyword, dan sentiment analysis untuk memetakan influencer & buzzer.",
       details: ["Social Listening", "Tracking Keyword", "Sentiment Analysis", "Mapping Influencer"]
     },
     {
       judul: "Rapid Response",
+      icon: <FaBullseye size={20} />, 
       desc: "Tim respons cepat untuk penyusunan holding statement, klarifikasi strategis, dan narrative stabilization guna melakukan damage control seketika.",
       details: ["Holding Statement", "Media Response", "Narrative Stabilization", "Damage Control"]
     },
     {
       judul: "Narrative Control",
+      icon: <FaComments size={20} />, 
       desc: "Strategi pengendalian arah percakapan publik melalui narrative reframing, counter framing, dan opinion shaping di berbagai platform.",
       details: ["Narrative Reframing", "Counter Framing", "Opinion Shaping", "Multi-platform Comm"]
     },
     {
       judul: "Reputation Recovery",
+      icon: <FaShieldAlt size={20} />, 
       desc: "Pemulihan reputasi jangka panjang melalui kampanye positif, leadership positioning, dan SEO reputation recovery untuk membangun kembali kepercayaan.",
       details: ["Positive Campaign", "Trust Rebuilding", "SEO Recovery", "Media Reinforcement"]
     },
     {
       judul: "Digital War Room",
+      icon: <FaUserSecret size={20} />, 
       desc: "Layanan premium berupa pusat komando situasi, crisis dashboard, dan intelligence mapping untuk perlindungan penuh selama periode krusial.",
       details: ["Situation Room", "Crisis Dashboard", "Intelligence Mapping", "Election Protection"]
     }
@@ -59,27 +72,28 @@ export default function Layanan() {
                 onClick={() => setActiveService(i)}
                 onMouseEnter={() => window.innerWidth > 1024 && setActiveService(i)}
                 onMouseLeave={() => window.innerWidth > 1024 && setActiveService(null)}
-                className={`p-8 border transition-all duration-500 relative overflow-hidden cursor-pointer select-none group
+                className={`p-8 border transition-all duration-500 relative overflow-hidden cursor-pointer select-none group flex flex-col
                   ${isActive
                     ? 'border-red-600 bg-slate-900 dark:bg-black shadow-2xl shadow-red-600/20 scale-[1.02] z-10'
                     : 'border-slate-200 dark:border-white/5 bg-white dark:bg-slate-900/50 lg:hover:border-red-600/50'}`}
               >
-                {/* Indikator Garis Samping */}
                 <div className={`absolute top-0 left-0 w-[3px] h-full bg-red-600 transition-transform duration-700 origin-bottom ${isActive ? 'scale-y-100' : 'scale-y-0'}`}></div>
 
-                {/* Judul */}
-                <h3 className={`text-xl font-black mb-4 tracking-tight uppercase italic transition-all duration-500 
-                  ${isActive ? 'text-red-600 translate-x-2' : 'text-slate-900 dark:text-white'}`}>
-                  {item.judul}
-                </h3>
+                <div className={`flex items-center gap-3 transition-transform duration-500 mb-4 ${isActive ? 'translate-x-2' : ''}`}>
+                  <div className={`transition-colors duration-500 ${isActive ? 'text-red-500' : 'text-slate-400 dark:text-slate-600'}`}>
+                    {item.icon}
+                  </div>
+                  <h3 className={`text-xl font-black tracking-tight uppercase italic transition-colors duration-500 
+                    ${isActive ? 'text-red-600' : 'text-slate-900 dark:text-white'}`}>
+                    {item.judul}
+                  </h3>
+                </div>
 
-                {/* Deskripsi */}
-                <p className={`text-[11px] leading-relaxed transition-colors duration-500 uppercase tracking-wide mb-8 
+                <p className={`text-[11px] leading-relaxed transition-colors duration-500 uppercase tracking-wide mb-8 flex-grow
                   ${isActive ? 'text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
                   {item.desc}
                 </p>
 
-                {/* Tags Detail - Perubahan Background & Teks saat Hover/Active */}
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {item.details.map((detail, idx) => (
                     <span
