@@ -24,7 +24,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4">// Filosofi_Layanan</h4>
+            {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4">// Filosofi_Layanan</h4> */}
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter uppercase mb-6">
               Crisis Management Berbasis Narasi, Persepsi, dan Kecepatan Respons
             </h2>

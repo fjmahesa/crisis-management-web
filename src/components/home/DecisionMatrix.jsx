@@ -25,15 +25,15 @@ export default function DecisionMatrix() {
           viewport={{ once: true }}
           className="mb-16 text-left"
         >
-          <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
+          {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
             <FaTable /> Intelligence_Matrix
-          </h4>
+          </h4> */}
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
-            Strategic <span className="text-red-600">Decision Matrix</span>
+            Strategic <span className="text-red-600">Respons Terukur Berdasarkan Tingkat Eskalasi</span>
           </h2>
-          <p className="mt-4 text-slate-500 dark:text-slate-500 font-mono text-[10px] uppercase tracking-[0.2em]">
+          {/* <p className="mt-4 text-slate-500 dark:text-slate-500 font-mono text-[10px] uppercase tracking-[0.2em]">
             Respons Terukur Berdasarkan Tingkat Eskalasi_
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Desktop Table View */}

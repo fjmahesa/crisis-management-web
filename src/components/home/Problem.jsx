@@ -38,9 +38,9 @@ export default function Problem() {
           viewport={{ once: true }}
           className="text-left md:text-center mb-12 md:mb-20"
         >
-          <h4 className="text-red-600 font-mono text-[9px] md:text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex md:justify-center items-center gap-2">
+          {/* <h4 className="text-red-600 font-mono text-[9px] md:text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex md:justify-center items-center gap-2">
             <FaExclamationTriangle className="animate-pulse" /> Ancaman_RealTime
-          </h4>
+          </h4> */}
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-tight">
             Krisis Politik Digital Bergerak Real-Time
           </h2>

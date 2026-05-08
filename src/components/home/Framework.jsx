@@ -70,9 +70,9 @@ export default function Framework() {
           viewport={{ once: true }}
           className="mb-16 text-left"
         >
-          <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
+          {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4 flex items-center gap-2">
             <FaProjectDiagram /> Alur_Metodologi
-          </h4>
+          </h4> */}
           <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none">
             D.I.G.I.T.A.L <span className="text-red-600">Framework</span>
           </h2>
@@ -133,17 +133,17 @@ export default function Framework() {
               </div>
 
               <div className="relative z-10">
-                <span className="font-mono text-red-600 text-[10px] font-bold tracking-[0.3em] mb-3 uppercase flex items-center gap-2">
+                {/* <span className="font-mono text-red-600 text-[10px] font-bold tracking-[0.3em] mb-3 uppercase flex items-center gap-2">
                   <span className="w-4 h-[1px] bg-red-600"></span>
                   Phase_0{activeStep + 1} // {steps[activeStep].letter}
-                </span>
+                </span> */}
                 <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4 tracking-tight leading-none">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-[11px] text-slate-800 dark:text-slate-200 font-bold mb-6 leading-relaxed uppercase tracking-wide">
+                <p className="text-[14px] text-slate-800 dark:text-slate-200 font-bold mb-6 leading-relaxed uppercase tracking-wide">
                   {steps[activeStep].desc}
                 </p>
-                <p className="text-[10px] text-slate-600 dark:text-slate-400 leading-relaxed uppercase tracking-widest border-t border-slate-200 dark:border-white/10 pt-6">
+                <p className="text-[12px] text-slate-600 dark:text-slate-400 leading-relaxed uppercase tracking-widest border-t border-slate-200 dark:border-white/10 pt-6">
                   {steps[activeStep].detail}
                 </p>
               </div>

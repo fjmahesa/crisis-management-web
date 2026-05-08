@@ -45,7 +45,7 @@ export default function Hero() {
           className="text-left"
         >
           {/* Badge Status */}
-          <motion.div 
+          {/* <motion.div 
             variants={fadeIn("up")}
             className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-red-500/30 bg-red-500/5 rounded-full backdrop-blur-md"
           >
@@ -56,7 +56,7 @@ export default function Hero() {
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-red-600 dark:text-red-500 font-mono">
               Intelligence Room // Aktif
             </span>
-          </motion.div>
+          </motion.div> */}
           
           <motion.h1 
             variants={fadeIn("up")}

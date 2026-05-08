@@ -23,9 +23,9 @@ export default function CTA() {
             </div>
           </div>
 
-          <h4 className="text-red-500 dark:text-red-200 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
+          {/* <h4 className="text-red-500 dark:text-red-200 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
             // Secure_Communication_Initiated
-          </h4>
+          </h4> */}
           
           <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.95] mb-8">
             Reputasi dibangun bertahun-tahun. <br />

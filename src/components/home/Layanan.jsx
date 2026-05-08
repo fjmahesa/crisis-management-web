@@ -46,9 +46,9 @@ export default function Layanan() {
           viewport={{ once: true }}
           className="mb-16 md:mb-24 text-left md:text-center"
         >
-          <span className="text-[10px] font-mono tracking-[0.5em] uppercase text-red-600 font-bold">
+          {/* <span className="text-[10px] font-mono tracking-[0.5em] uppercase text-red-600 font-bold">
             // Katalog_Solusi_Strategis
-          </span>
+          </span> */}
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter mt-4 text-slate-900 dark:text-white uppercase italic">
             Strategic Political <span className="text-red-600">Crisis Services</span>
           </h2>
@@ -72,10 +72,10 @@ export default function Layanan() {
                     ? 'border-red-600/50 bg-slate-50 dark:bg-red-600/[0.04] shadow-2xl shadow-red-600/5'
                     : 'border-slate-200 dark:border-white/5 bg-transparent lg:hover:border-red-600/30'}`}
               >
-                {/* Kode Teknis */}
+                {/* Kode Teknis
                 <div className={`absolute top-6 right-8 font-mono text-[9px] tracking-widest transition-colors duration-500 ${isActive ? 'text-red-600' : 'text-slate-300 dark:text-slate-700'}`}>
                   {item.code}
-                </div>
+                </div> */}
 
                 {/* Indikator Garis Samping */}
                 <div className={`absolute top-0 left-0 w-[2px] h-full bg-red-600 transition-transform duration-700 origin-bottom ${isActive ? 'scale-y-100' : 'scale-y-0'}`}></div>

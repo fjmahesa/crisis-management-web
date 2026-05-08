@@ -37,13 +37,13 @@ export default function WhyChooseUs() {
         
         {/* Section Header */}
         <div className="mb-16">
-          <motion.h4 
+          {/* <motion.h4 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4"
           >
             Core_Advantages
-          </motion.h4>
+          </motion.h4> */}
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

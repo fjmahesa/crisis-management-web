@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
-import Statistik from '../components/home/Statistik';
 import Hero from '../components/home/Hero';
 import Layanan from '../components/home/Layanan';
 // import Insights from '../components/home/Insights';
@@ -18,9 +17,6 @@ export default function Home() {
   return (
     <main className="bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)] text-slate-900 dark:text-white transition-colors duration-700 min-h-screen"> 
       <Hero />
-      <div className="bg-slate-100/50 dark:bg-transparent">
-        <Statistik />
-      </div>
 
       <About />
       <Problem />
