@@ -102,6 +102,11 @@ export default function Footer() {
               © {currentYear} CRISISMANAGEMENT.ID
             </div>
 
+            
+          </div>
+
+          <div className="flex flex-col items-center md:items-end gap-2 group">
+
             <button
               onClick={toggleTheme}
               className="flex items-center gap-3 px-4 py-2 bg-slate-900 dark:bg-red-600 rounded-sm hover:scale-105 transition-all shadow-xl"
@@ -113,10 +118,8 @@ export default function Footer() {
                 {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
               </span>
             </button>
-          </div>
 
-          {/* <div className="flex flex-col items-center md:items-end gap-2 group">
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               <FaLock className="text-red-600 text-[10px] animate-pulse" />
               <span className="text-[9px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-[0.4em] font-black">
                 End-to-End Encryption Active
@@ -124,8 +127,8 @@ export default function Footer() {
             </div>
             <span className="text-[7px] font-mono text-slate-400 dark:text-slate-700 uppercase tracking-[0.3em]">
               Security_Node: Jakarta_Terminal_ID: {Math.floor(Math.random() * 10000)} // TLS_Verified
-            </span>
-          </div> */}
+            </span> */}
+          </div>
         </div>
       </div>
     </footer>
