@@ -1,121 +1,128 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-// Menggunakan useTheme dari Context, bukan hook lokal
 import { useTheme } from '../context/ThemeContext'; 
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaSun, FaMoon } from 'react-icons/fa';
+import { 
+  FaLinkedinIn, FaSun, FaMoon, FaLock, FaGlobe, 
+  FaPhoneAlt, FaWhatsapp, FaEnvelope, FaInstagram 
+} from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  // Mengambil state global agar perubahan di Navbar langsung berdampak di sini
   const { theme, toggleTheme } = useTheme();
 
-  const socialLinks = [
-    { icon: <FaLinkedinIn size={16} />, href: "#", label: "LinkedIn" },
-    { icon: <FaTwitter size={16} />, href: "#", label: "Twitter" },
-    { icon: <FaInstagram size={16} />, href: "#", label: "Instagram" },
-    { icon: <FaFacebookF size={16} />, href: "#", label: "Facebook" },
-  ];
-
   return (
-    <footer className="transition-colors duration-700 bg-[#F8F9FA] dark:bg-[#050505] border-t border-slate-200 dark:border-white/5 pt-20 pb-10 px-6 overflow-hidden font-sans">
+    <footer className="transition-colors duration-700 bg-white dark:bg-[#050505] border-t border-slate-100 dark:border-white/5 pt-24 pb-12 px-6 overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
           
-          {/* KOLOM 1: BRAND LOGO & SOSIAL MEDIA */}
-          <div className="space-y-8">
-            <div>
-              <Link to="/" className="inline-block">
-                {/* 1. key={theme} memastikan React me-render ulang tag img saat tema berubah
-                  2. Menggunakan Context API membuat logo ini berubah serentak dengan Navbar
-                */}
-                <img 
-                  key={theme}
-                  src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
-                  alt="Indonesia Crisis Management Logo" 
-                  className="h-14 md:h-16 w-auto object-contain transition-all duration-500"
-                />
-              </Link>
-              <p className="mt-6 text-slate-500 dark:text-slate-400 text-xs leading-relaxed tracking-widest uppercase font-mono max-w-xs">
-                Pusat komando pertahanan reputasi dan manajemen risiko strategis. Melindungi aset kritikal di era ketidakpastian.
-              </p>
-            </div>
-            
-            {/* SOSIAL MEDIA ICONS */}
-            <div className="flex gap-5">
-              {socialLinks.map((social, i) => (
-                <a 
-                  key={i} 
-                  href={social.href} 
-                  aria-label={social.label}
-                  className="text-slate-400 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-600 transition-all duration-300 transform hover:scale-110"
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
+          {/* KOLOM 1: BRAND & MISSION (Span 5) */}
+          <div className="md:col-span-5 space-y-8">
+            <Link to="/" className="inline-block group">
+              <img 
+                key={theme}
+                src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
+                alt="Logo" 
+                className="h-12 md:h-25 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+              />
+            </Link>
+            <p className="text-slate-500 dark:text-slate-400 text-[10px] leading-relaxed tracking-[0.2em] uppercase font-mono max-w-sm border-l border-red-600/30 pl-6 italic">
+              "Melindungi Reputasi Melalui Kontrol Narasi, Analisis Persepsi, dan Kecerdasan Strategis Real-Time."
+            </p>
           </div>
 
-          {/* KOLOM 2: NAVIGASI */}
-          <div className="space-y-6 md:pl-10">
-            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50 font-bold">Direktori_Sistem</h4>
-            <ul className="space-y-4 text-xs font-bold tracking-tight">
-              <li><Link to="/layanan" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Layanan Utama</Link></li>
-              <li><Link to="/metodologi" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Metodologi</Link></li>
-              <li><Link to="/insights" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Intelligence Report</Link></li>
-              <li><Link to="/tentang" className="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors uppercase italic">// Tentang Kami</Link></li>
+          {/* KOLOM 2: STRATEGIC LINKS (Span 3) */}
+          <div className="md:col-span-3 space-y-6">
+            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.5em] uppercase font-black">Strategic_Access</h4>
+            <ul className="space-y-4 text-[10px] font-bold tracking-widest uppercase">
+              <li><Link to="/layanan" className="text-slate-400 hover:text-red-600 transition-colors">// Crisis_Service</Link></li>
+              <li><Link to="/metodologi" className="text-slate-400 hover:text-red-600 transition-colors">// Digital_Framework</Link></li>
+              <li><Link to="/insights" className="text-slate-400 hover:text-red-600 transition-colors">// Thought_Leadership</Link></li>
+              <li><Link to="/privacy" className="text-slate-400 hover:text-red-600 transition-colors">// Data_Privacy_Protocol</Link></li>
             </ul>
           </div>
 
-          {/* KOLOM 3: KONTAK */}
-          <div className="space-y-6">
-            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.4em] uppercase opacity-50 font-bold">Kontak_Darurat</h4>
-            <div className="space-y-6">
-              <div className="group cursor-pointer">
-                <p className="text-[10px] text-slate-500 font-mono uppercase mb-1">Enkripsi Email</p>
-                <p className="text-sm text-[#0F172A] dark:text-white group-hover:text-red-600 transition-colors font-medium">ops@crisismanagement.id</p>
+          {/* KOLOM 3: DISCREET CONTACT (MINIMALIST DESIGN) */}
+          <div className="md:col-span-4 space-y-6">
+            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.5em] uppercase font-black">Discreet_Inquiry</h4>
+            
+            <div className="flex flex-col gap-5">
+              {/* KONTAK */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-8 h-8 flex items-center justify-center border border-slate-100 dark:border-white/5 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                  <FaPhoneAlt size={12} />
+                </div>
+                <div>
+                  <p className="text-[7px] text-slate-400 font-mono uppercase tracking-[0.2em] mb-0.5">Secure_Line</p>
+                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">+62 21 0900 888</p>
+                </div>
               </div>
-              <div className="group cursor-pointer">
-                <p className="text-[10px] text-slate-500 font-mono uppercase mb-1">Garis Aman</p>
-                <p className="text-sm text-[#0F172A] dark:text-white group-hover:text-red-600 transition-colors font-medium">+62 21 0900 888</p>
+
+              {/* WHATSAPP */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-8 h-8 flex items-center justify-center border border-slate-100 dark:border-white/5 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                  <FaWhatsapp size={14} />
+                </div>
+                <div>
+                  <p className="text-[7px] text-slate-400 font-mono uppercase tracking-[0.2em] mb-0.5">WhatsApp_Direct</p>
+                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">+62 812 3456 7890</p>
+                </div>
+              </div>
+
+              {/* EMAIL */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-8 h-8 flex items-center justify-center border border-slate-100 dark:border-white/5 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                  <FaEnvelope size={12} />
+                </div>
+                <div>
+                  <p className="text-[7px] text-slate-400 font-mono uppercase tracking-[0.2em] mb-0.5">Encrypted_Mail</p>
+                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">ops@crisismanagement.id</p>
+                </div>
+              </div>
+
+              {/* INSTAGRAM */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-8 h-8 flex items-center justify-center border border-slate-100 dark:border-white/5 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+                  <FaInstagram size={14} />
+                </div>
+                <div>
+                  <p className="text-[7px] text-slate-400 font-mono uppercase tracking-[0.2em] mb-0.5">Intel_Feed</p>
+                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">@crisismanagement.id</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-slate-200 dark:border-white/5 gap-6">
-          <div className="flex items-center gap-6">
-            <div className="text-[10px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest text-center md:text-left">
-              © {currentYear} CRISISMANAGEMENT.ID // HAK CIPTA DILINDUNGI
+        {/* BOTTOM TERMINAL */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 dark:border-white/5 gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="text-[9px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest italic">
+              © {currentYear} CRISISMANAGEMENT.ID // CONFIDENTIAL_AND_DISCREET
             </div>
             
-            {/* FOOTER THEME TOGGLE */}
             <button 
               onClick={toggleTheme}
-              className="flex items-center gap-2 px-3 py-1 border border-slate-200 dark:border-white/10 rounded-full hover:border-red-600 transition-all group"
+              className="flex items-center gap-3 px-4 py-2 bg-slate-900 dark:bg-red-600 rounded-sm hover:scale-105 transition-all shadow-xl"
             >
-              <div className="text-slate-400 group-hover:text-red-600 transition-colors">
+              <div className="text-white">
                 {theme === 'dark' ? <FaSun size={10} /> : <FaMoon size={10} />}
               </div>
-              <span className="text-[9px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest group-hover:text-red-600">
-                {theme === 'dark' ? 'Light_Mode' : 'Dark_Mode'}
+              <span className="text-[9px] font-mono text-white uppercase tracking-widest font-black">
+                {theme === 'dark' ? 'Override_To_Light' : 'Override_To_Dark'}
               </span>
             </button>
           </div>
 
-          <div className="flex flex-col items-center md:items-end gap-1 opacity-50 hover:opacity-100 transition-opacity duration-500 cursor-default">
-            <div className="flex items-center gap-2">
-              <div className="relative flex h-2 w-2">
-                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-20 ${theme === 'dark' ? 'bg-slate-400' : 'bg-red-400'}`}></span>
-                <span className={`relative inline-flex rounded-full h-2 w-2 ${theme === 'dark' ? 'bg-slate-500' : 'bg-red-600'}`}></span>
-              </div>
-              <span className="text-[9px] font-mono text-slate-500 dark:text-slate-300 uppercase tracking-[0.4em]">
-                Encrypted Connection
+          <div className="flex flex-col items-center md:items-end gap-2 group">
+            <div className="flex items-center gap-3">
+              <FaLock className="text-red-600 text-[10px] animate-pulse" />
+              <span className="text-[9px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-[0.4em] font-black">
+                End-to-End Encryption Active
               </span>
             </div>
-            <span className="text-[7px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-[0.2em]">
-              Auth_Node: 256-BIT_SSL // Verified_Terminal
+            <span className="text-[7px] font-mono text-slate-400 dark:text-slate-700 uppercase tracking-[0.3em]">
+              Security_Node: Jakarta_Terminal_ID: {Math.floor(Math.random() * 10000)} // TLS_Verified
             </span>
           </div>
         </div>

@@ -1,99 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaArrowRight, FaRegBookmark } from 'react-icons/fa';
 
 export default function Insights() {
+  const [activeArticle, setActiveArticle] = useState(null);
+
   const articles = [
     {
-      id: "01",
-      kategori: "RISIKO GLOBAL",
-      judul: "Ancaman Siber 2026: Bagaimana Infrastruktur Kritis Bertahan?",
-      tanggal: "05 MEI 2026",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+      category: "Political Analysis",
+      date: "Mei 2026",
+      title: "Anatomi Serangan Buzzer: Bagaimana Mengidentifikasi Operasi Terstruktur",
+      excerpt: "Memahami pola distribusi narasi dan koordinasi aktor di balik kampanye disinformasi digital.",
+      image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800"
     },
     {
-      id: "02",
-      kategori: "MANAJEMEN REPUTASI",
-      judul: "Navigasi Krisis Komunikasi di Era Deepfake dan AI Generatif.",
-      tanggal: "28 APR 2026",
-      img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+      category: "Crisis Protocol",
+      date: "April 2026",
+      title: "The Golden Hour: Mengapa 60 Menit Pertama Menentukan Nasib Reputasi Anda",
+      excerpt: "Panduan taktis dalam mengambil keputusan krusial saat isu negatif mulai menyentuh algoritma viral.",
+      image: "https://images.unsplash.com/photo-1508921334172-b68ed301dc82?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      category: "Digital Strategy",
+      date: "Maret 2026",
+      title: "Narrative Reframing: Mengubah Serangan Menjadi Amunisi Komunikasi",
+      excerpt: "Teknik mengubah sudut pandang publik melalui kontrol distribusi informasi yang cerdas.",
+      image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 transition-colors duration-700 bg-white dark:bg-[#050505] border-t border-slate-100 dark:border-white/5">
+    <section className="py-24 px-6 md:px-12 bg-white dark:bg-[#050505] transition-colors duration-700">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="max-w-xl text-left"
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <motion.h4 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4"
+            >
+              Intelligence_Journal
+            </motion.h4>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none"
+            >
+              Strategic <span className="text-red-600">Insights</span>
+            </motion.h2>
+          </div>
+          <motion.button 
+            whileHover={{ gap: '1.5rem' }}
+            className="flex items-center gap-4 text-[10px] font-mono uppercase tracking-[0.3em] text-slate-400 hover:text-red-600 transition-all border-b border-slate-100 dark:border-white/10 pb-2"
           >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-4 uppercase text-[#0F172A] dark:text-white">
-              LAPORAN <span className="text-red-600">INTELIJEN</span>
-            </h2>
-            <p className="text-slate-500 dark:text-slate-400 font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase">
-              Analisis Mendalam Dinamika Krisis Global
-            </p>
-          </motion.div>
-          
-          <button className="text-red-600 font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase border-b border-red-600/30 pb-2 hover:border-red-600 transition-all duration-300">
-            Lihat Semua Arsip //
-          </button>
+            Lihat Semua Analisis <FaArrowRight />
+          </motion.button>
         </div>
 
-        {/* Grid Artikel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-12">
+        {/* Article Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {articles.map((post, i) => (
             <motion.article 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => setActiveArticle(i)}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden aspect-video mb-8 border border-slate-100 dark:border-white/10 group-hover:border-red-600/50 transition-all duration-500 shadow-sm">
-                {/* Overlay saat Hover */}
-                <div className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                
-                <img 
-                  src={post.img} 
-                  alt={post.judul}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-out"
+              {/* Image Container */}
+              <div className="relative aspect-[16/10] overflow-hidden mb-6 bg-slate-100 dark:bg-white/5">
+                <motion.img 
+                  src={post.image} 
+                  alt={post.title}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
-                
-                {/* ID Tag */}
-                <div className="absolute top-5 left-5 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1.5 z-20 border border-slate-200 dark:border-white/10">
-                  <span className="text-red-600 font-mono text-[9px] md:text-[10px] font-bold">REP_{post.id}</span>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-white dark:bg-slate-900 px-3 py-1 text-[9px] font-mono uppercase tracking-widest text-red-600 shadow-xl">
+                    {post.category}
+                  </span>
                 </div>
               </div>
 
-              <div className="space-y-4 px-1">
-                <div className="flex items-center gap-4">
-                  <span className="text-red-600 font-mono text-[10px] font-bold tracking-widest">{post.kategori}</span>
-                  <span className="h-[1px] w-8 bg-slate-200 dark:bg-white/20"></span>
-                  <span className="text-slate-400 dark:text-slate-500 font-mono text-[10px]">{post.tanggal}</span>
+              {/* Text Content */}
+              <div className={`transition-all duration-500 ${activeArticle === i ? 'pl-4 border-l-2 border-red-600' : 'pl-0 border-l-0'}`}>
+                <div className="flex items-center gap-4 mb-3">
+                  <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">{post.date}</span>
+                  <div className="h-[1px] w-8 bg-slate-200 dark:bg-white/10"></div>
+                  <FaRegBookmark className={`text-[10px] ${activeArticle === i ? 'text-red-600' : 'text-slate-300'}`} />
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-black tracking-tight text-[#0F172A] dark:text-white group-hover:text-red-600 transition-colors duration-300 leading-tight italic uppercase">
-                  {post.judul}
+                <h3 className={`text-lg font-black leading-tight uppercase mb-4 transition-colors duration-300 ${activeArticle === i ? 'text-red-600' : 'text-slate-900 dark:text-white'}`}>
+                  {post.title}
                 </h3>
                 
-                <p className="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium leading-relaxed line-clamp-2 transition-colors duration-500">
-                  Menelaah bagaimana protokol keamanan strategis diadaptasi untuk menghadapi gelombang ancaman baru di era ketidakpastian global...
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed uppercase tracking-wide">
+                  {post.excerpt}
                 </p>
-                
-                <div className="pt-6 flex items-center gap-3 text-[10px] font-mono font-bold text-[#0F172A] dark:text-white opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-4 group-hover:translate-x-0">
-                  <span>BACA LAPORAN LENGKAP</span>
-                  <span className="text-red-600">---&gt;</span>
+
+                <div className={`mt-6 overflow-hidden transition-all duration-500 ${activeArticle === i ? 'h-8 opacity-100' : 'h-0 opacity-0'}`}>
+                   <span className="text-[9px] font-mono font-bold text-red-600 uppercase tracking-[0.3em] flex items-center gap-2">
+                     Baca Selengkapnya <FaArrowRight />
+                   </span>
                 </div>
               </div>
             </motion.article>
           ))}
         </div>
+
       </div>
     </section>
   );

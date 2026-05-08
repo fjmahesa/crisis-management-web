@@ -3,10 +3,13 @@ import useDarkMode from '../hooks/useDarkMode'; // Import hook yang sudah kita b
 import Statistik from '../components/home/Statistik';
 import Hero from '../components/home/Hero';
 import Layanan from '../components/home/Layanan';
-import Protokol from '../components/home/Protokol';
 import Insights from '../components/home/Insights';
 import CTA from '../components/home/CTA';
-import Klien from '../components/home/Klien';
+import About from '../components/home/About';
+import Problem from '../components/home/Problem';
+import Framework from '../components/home/Framework';
+import DecisionMatrix from '../components/home/DecisionMatrix';
+import WhyChooseUs from '../components/home/WhyChooseUs';
 
 export default function Home() {
   // Kita panggil hook ini di level Page agar transisi warna terasa di seluruh container
@@ -15,27 +18,21 @@ export default function Home() {
   return (
     <main className="bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)] text-slate-900 dark:text-white transition-colors duration-700 min-h-screen"> 
       <Hero />
-      
-      
-      {/* 
-          Section Statistik & Klien biasanya memiliki latar belakang sedikit berbeda 
-          untuk memberikan pemisahan visual (Zebra Striping)
-      */}
       <div className="bg-slate-100/50 dark:bg-transparent">
         <Statistik />
       </div>
 
+      <About />
+      <Problem />
+      
       <Layanan />
       
       <div className="bg-white dark:bg-transparent">
-        <Protokol />
+        <Framework />
       </div>
-
-      <Insights />
-      
-      {/* Klien diletakkan sebelum CTA sebagai final trust building */}
-      <Klien /> 
-      
+      <DecisionMatrix />
+      <WhyChooseUs />
+      {/* <Insights /> */}
       <CTA />
     </main>
   );

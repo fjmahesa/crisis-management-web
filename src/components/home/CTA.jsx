@@ -1,76 +1,75 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaWhatsapp, FaEnvelope, FaShieldAlt } from 'react-icons/fa';
 
 export default function CTA() {
   return (
-    <section className="py-24 md:py-40 px-6 relative overflow-hidden transition-colors duration-700 bg-white dark:bg-[#050505]">
-      
-      {/* BACKGROUND DECORATIVE ELEMENTS */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Glow Merah: Disesuaikan opasitasnya agar tidak terlalu menusuk di mode terang */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-red-600/[0.07] dark:bg-red-600/10 blur-[150px] rounded-full" />
-        
-        {/* Grid Pattern: Menggunakan currentColor agar adaptif */}
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03]" style={{ 
-          backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }} />
+    <section className="py-24 px-6 md:px-12 bg-slate-900 dark:bg-red-600 transition-colors duration-700 relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-white rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-red-500 rounded-full blur-[100px]"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+      <div className="max-w-5xl mx-auto relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="border border-slate-200 dark:border-red-600/30 bg-slate-50/50 dark:bg-red-600/[0.02] backdrop-blur-md p-8 md:p-20 text-center relative overflow-hidden group shadow-2xl shadow-slate-200 dark:shadow-none"
         >
-          {/* Corner Accents (Futuristic Frame) */}
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-red-600" />
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-red-600" />
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <span className="text-red-600 font-mono text-[10px] md:text-xs tracking-[0.5em] uppercase mb-8 block font-bold">
-              Status: Menunggu Inisialisasi
-            </span>
-            
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9] text-[#0F172A] dark:text-white transition-colors duration-500 uppercase italic">
-              SIAP MENGHADAPI <br />
-              <span className="text-red-600">KRISIS BERIKUTNYA?</span>
-            </h2>
-
-            <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-14 text-xs md:text-sm leading-relaxed tracking-[0.2em] uppercase font-mono italic font-medium">
-              "Jangan menunggu kehancuran untuk mulai membangun pertahanan. Aktifkan protokol manajemen krisis Anda sekarang."
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-              <motion.button 
-                whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 20px 40px rgba(220, 38, 38, 0.3)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto bg-red-600 text-white px-12 py-5 font-black text-xs uppercase tracking-[0.3em] transition-all duration-300 relative z-10"
-              >
-                Hubungi Pusat Kendali
-              </motion.button>
-
-              <button className="text-[10px] font-mono font-bold tracking-[0.2em] text-slate-400 dark:text-slate-500 hover:text-red-600 dark:hover:text-white transition-all uppercase border-b border-slate-200 dark:border-red-600/30 pb-2">
-                Unduh Company Profile (.PDF)
-              </button>
+          <div className="flex justify-center mb-8">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl">
+              <FaShieldAlt />
             </div>
-          </motion.div>
+          </div>
 
-          {/* Decorative Scanner Line */}
-          <motion.div 
-            animate={{ x: ['-100%', '200%'] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-            className="absolute top-0 left-0 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-30"
-          />
+          <h4 className="text-red-500 dark:text-red-200 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
+            // Secure_Communication_Initiated
+          </h4>
+          
+          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.95] mb-8">
+            Reputasi dibangun bertahun-tahun. <br />
+            <span className="opacity-50">Krisis terjadi dalam hitungan menit.</span>
+          </h2>
+
+          <p className="max-w-2xl mx-auto text-sm md:text-base text-slate-300 dark:text-red-50 uppercase tracking-widest leading-relaxed mb-12 font-medium">
+            Jangan menunggu isu menjadi liar. Amankan kontrol narasi Anda sekarang melalui jalur konsultasi rahasia kami.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <motion.a
+              href="https://wa.me/yournumber"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full md:w-auto px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 shadow-2xl hover:bg-red-50 transition-colors"
+            >
+              <FaWhatsapp className="text-lg" /> Konsultasi Rahasia
+            </motion.a>
+            
+            <motion.a
+              href="mailto:contact@yourdomain.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full md:w-auto px-10 py-5 bg-transparent border border-white/30 text-white font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 hover:bg-white/10 transition-colors"
+            >
+              <FaEnvelope className="text-lg" /> Kirim Briefing
+            </motion.a>
+          </div>
+
+          <div className="mt-16 flex items-center justify-center gap-8 opacity-30">
+            <div className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-white rounded-full"></div>
+              <span className="text-[8px] font-mono text-white uppercase tracking-[0.2em]">Encrypted Data</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-white rounded-full"></div>
+              <span className="text-[8px] font-mono text-white uppercase tracking-[0.2em]">Private Server</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-white rounded-full"></div>
+              <span className="text-[8px] font-mono text-white uppercase tracking-[0.2em]">Discreet Operation</span>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
