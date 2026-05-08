@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM TERMINAL */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 dark:border-white/5 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-300 dark:border-white/5 gap-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="text-[9px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest italic">
               © {currentYear} CRISISMANAGEMENT.ID // CONFIDENTIAL_AND_DISCREET
