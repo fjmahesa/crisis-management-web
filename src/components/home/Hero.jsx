@@ -77,11 +77,11 @@ export default function Hero() {
 
           <motion.div variants={fadeIn("up")} className="flex flex-wrap gap-4">
             <button className="bg-red-600 text-white px-8 py-4 font-black text-[10px] uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl shadow-red-600/20">
-              Konsultasi Strategis
-            </button>
-            <button className="px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
               Audit Risiko Digital
             </button>
+            {/* <button className="px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] border border-slate-300 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+              Konsultasi Strategis
+            </button> */}
           </motion.div>
         </motion.div>
 

@@ -68,14 +68,14 @@ export default function Navbar() {
             {theme === 'dark' ? <FaSun size={12} /> : <FaMoon size={12} />}
           </button>
 
-          {/* CTA: KONTAK DARURAT / KONSULTASI RAHASIA */}
+          {/* CTA: KONTAK DARURAT / KONSULTASI RAHASIA
           <Link 
             to="/contact" 
             className="hidden md:flex items-center gap-2 bg-red-600 text-white px-5 py-2 hover:bg-red-700 transition-all font-black text-[10px] uppercase tracking-widest shadow-lg shadow-red-600/20"
           >
             <FaShieldAlt className="text-[12px]" />
             Konsultasi Rahasia
-          </Link>
+          </Link> */}
 
           {/* HAMBURGER (Mobile) */}
           <button 

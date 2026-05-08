@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaUser } from 'react-icons/fa'; // Import Ikon Person
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -7,7 +8,6 @@ const fadeIn = {
 };
 
 export default function About() {
-  // State khusus untuk menangani interaksi Tap di mobile
   const [activeTarget, setActiveTarget] = useState(null);
 
   const targets = [
@@ -24,7 +24,6 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-            {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.4em] uppercase font-bold mb-4">// Filosofi_Layanan</h4> */}
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tighter uppercase mb-6">
               Crisis Management Berbasis Narasi, Persepsi, dan Kecepatan Respons
             </h2>
@@ -45,13 +44,12 @@ export default function About() {
             className="relative p-6 md:p-8 bg-slate-900 text-white rounded-sm overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/20 blur-[60px]"></div>
-            <h3 className="font-mono text-[9px] tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-50 italic">Target_Audience // Proteksi_Prioritas</h3>
+            <h3 className="font-mono text-[15px] tracking-[0.3em] uppercase mb-6 md:mb-8 opacity-90 italic">Service ini cocok untuk:</h3>
             
             <div className="flex flex-col gap-2">
               {targets.map((item, i) => (
                 <motion.div 
                   key={i} 
-                  // onClick hanya akan terasa efeknya di mobile melalui state activeTarget
                   onClick={() => setActiveTarget(i)}
                   className={`relative flex items-center gap-4 p-4 transition-all duration-300 cursor-pointer border-l-2 group
                     ${activeTarget === i 
@@ -59,14 +57,12 @@ export default function About() {
                       : 'bg-transparent border-white/10 lg:hover:bg-red-600/5 lg:hover:border-red-600/50'
                     }`}
                 >
-                  {/* Indikator Angka */}
-                  <span className={`font-mono text-xs transition-colors duration-300 
-                    ${activeTarget === i 
-                      ? 'text-red-500' 
-                      : 'text-white/40 lg:group-hover:text-red-500/70'
-                    }`}>
-                    0{i+1}
-                  </span>
+                  {/* Ikon Person Ganti Numbering */}
+                  <div className={`transition-colors duration-300 ${
+                    activeTarget === i ? 'text-red-500' : 'text-white/30 lg:group-hover:text-red-500/70'
+                  }`}>
+                    <FaUser size={14} />
+                  </div>
 
                   {/* Teks Target */}
                   <span className={`text-[10px] md:text-sm font-bold tracking-widest uppercase transition-all duration-300 
@@ -77,7 +73,7 @@ export default function About() {
                     {item}
                   </span>
 
-                  {/* Shared Layout Glow untuk elemen yang benar-benar aktif (Mobile Tap) */}
+                  {/* Shared Layout Glow */}
                   {activeTarget === i && (
                     <motion.div 
                       layoutId="activeBackground"

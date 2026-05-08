@@ -43,7 +43,7 @@ export default function CTA() {
               whileTap={{ scale: 0.95 }}
               className="w-full md:w-auto px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 shadow-2xl hover:bg-red-50 transition-colors"
             >
-              <FaWhatsapp className="text-lg" /> Konsultasi Rahasia
+              <FaWhatsapp className="text-lg" /> Konsultasi
             </motion.a>
             
             <motion.a
@@ -56,7 +56,7 @@ export default function CTA() {
             </motion.a>
           </div>
 
-          <div className="mt-16 flex items-center justify-center gap-8 opacity-30">
+          {/* <div className="mt-16 flex items-center justify-center gap-8 opacity-30">
             <div className="flex items-center gap-2">
               <div className="w-1 h-1 bg-white rounded-full"></div>
               <span className="text-[8px] font-mono text-white uppercase tracking-[0.2em]">Encrypted Data</span>
@@ -69,7 +69,7 @@ export default function CTA() {
               <div className="w-1 h-1 bg-white rounded-full"></div>
               <span className="text-[8px] font-mono text-white uppercase tracking-[0.2em]">Discreet Operation</span>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

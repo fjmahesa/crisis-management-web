@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* KOLOM 2: STRATEGIC LINKS (Span 3) */}
           <div className="md:col-span-3 space-y-6">
-            <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.5em] uppercase font-black">Navigasi</h4>
+            {/* <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.5em] uppercase font-black">Navigasi</h4> */}
             <ul className="space-y-4 text-[10px] font-bold tracking-widest uppercase">
               <li><Link to="/" className="text-slate-400 hover:text-red-600 transition-colors">Home</Link></li>
               <li><Link to="/layanan" className="text-slate-400 hover:text-red-600 transition-colors">About</Link></li>
