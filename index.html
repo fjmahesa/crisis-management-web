@@ -4,19 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crisis-management-web</title>
+    
+    <title>Indonesia Crisis Management | Pusat Komando Risiko Strategis</title>
+    <meta name="description" content="Indonesia Crisis Management menyediakan solusi pertahanan reputasi, manajemen krisis teknis, dan audit keamanan strategis lintas sektor." />
+    <meta name="keywords" content="crisis management indonesia, manajemen risiko, keamanan data, audit sistem, pertahanan reputasi" />
+    <meta name="author" content="Indonesia Crisis Management" />
+
+    <meta property="og:title" content="Indonesia Crisis Management | Pusat Komando Risiko" />
+    <meta property="og:description" content="Melindungi aset kritikal dan reputasi di era ketidakpastian." />
+    <meta property="og:image" content="/og-image.jpg" /> <meta property="og:type" content="website" />
+
     <script>
-    (function() {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
-  </script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme') || 'light';
+          if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body>
+
+  <body className="antialiased selection:bg-red-600 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
