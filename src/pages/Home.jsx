@@ -1,9 +1,9 @@
 import React from 'react';
-import useDarkMode from '../hooks/useDarkMode'; // Import hook yang sudah kita buat
+import { useTheme } from '../context/ThemeContext';
 import Statistik from '../components/home/Statistik';
 import Hero from '../components/home/Hero';
 import Layanan from '../components/home/Layanan';
-import Insights from '../components/home/Insights';
+// import Insights from '../components/home/Insights';
 import CTA from '../components/home/CTA';
 import About from '../components/home/About';
 import Problem from '../components/home/Problem';
@@ -13,7 +13,7 @@ import WhyChooseUs from '../components/home/WhyChooseUs';
 
 export default function Home() {
   // Kita panggil hook ini di level Page agar transisi warna terasa di seluruh container
-  const [theme] = useDarkMode();
+  const { theme } = useTheme();
 
   return (
     <main className="bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)] text-slate-900 dark:text-white transition-colors duration-700 min-h-screen"> 
