@@ -90,14 +90,14 @@ export default function DecisionMatrix() {
                 : 'bg-slate-50 dark:bg-white/[0.02] border-slate-200 dark:border-white/5'
               }`}
             >
-              <div className="flex items-center gap-2 mb-3">
+              {/* <div className="flex items-center gap-2 mb-3">
                 <FaInfoCircle size={10} className={activeMatrix === i ? 'text-red-600' : 'text-slate-400'} />
                 <span className={`font-mono text-[8px] uppercase tracking-[0.2em] ${
                   activeMatrix === i ? 'text-red-600' : 'text-slate-400 dark:text-slate-500'
                 }`}>
                   Matrix_ID: 0{i + 1}
                 </span>
-              </div>
+              </div> */}
               <h3 className={`text-[11px] font-bold uppercase mb-4 leading-relaxed transition-colors ${
                 activeMatrix === i ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-slate-400'
               }`}>

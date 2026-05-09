@@ -115,12 +115,6 @@ export default function WhyChooseUs() {
             );
           })}
         </div>
-
-        <div className="mt-8 text-center md:hidden">
-          <p className="text-[8px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">
-            Tap kartu untuk melihat detail protokol_
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -17,15 +17,10 @@ export default function Home() {
   return (
     <main className="bg-[var(--color-light-bg)] dark:bg-[var(--color-dark-bg)] text-slate-900 dark:text-white transition-colors duration-700 min-h-screen"> 
       <Hero />
-
       <About />
       <Problem />
-      
       <Layanan />
-      
-      <div className="bg-white dark:bg-transparent">
-        <Framework />
-      </div>
+      <Framework />
       <DecisionMatrix />
       <WhyChooseUs />
       {/* <Insights /> */}

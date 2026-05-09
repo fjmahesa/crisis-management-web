@@ -110,12 +110,6 @@ export default function Layanan() {
             );
           })}
         </div>
-
-        <div className="mt-16 text-center lg:hidden">
-          <p className="text-[10px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">
-            Tap layanan untuk detail protokol_
-          </p>
-        </div>
       </div>
     </section>
   );

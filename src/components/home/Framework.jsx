@@ -149,15 +149,7 @@ export default function Framework() {
               </div>
             </motion.div>
           </AnimatePresence>
-
         </div>
-
-        <div className="mt-12 text-left lg:hidden">
-          <p className="text-[8px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em] animate-pulse">
-            Select phase to initialize data_
-          </p>
-        </div>
-
       </div>
     </section>
   );

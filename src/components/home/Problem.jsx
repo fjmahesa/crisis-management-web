@@ -95,12 +95,6 @@ export default function Problem() {
             </motion.div>
           ))}
         </div>
-
-        <div className="mt-10 text-center lg:hidden">
-          <p className="text-[8px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">
-            Tap pada kartu untuk memfokuskan_ancaman
-          </p>
-        </div>
       </div>
     </section>
   );

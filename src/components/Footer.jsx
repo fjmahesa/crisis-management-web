@@ -77,7 +77,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-400 font-mono uppercase tracking-[0.2em] mb-0.5">E-Mail</p>
-                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">indonesiacrisismanagement@gmail.com</p>
+                  <p className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-tighter group-hover:text-red-600 transition-colors">indonesia@crisismanagement.id</p>
                 </div>
               </div>
 
