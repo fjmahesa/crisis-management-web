@@ -20,9 +20,6 @@ export default function AboutPage() {
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-7"
           >
-            {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
-              // Corporate_Profile_Intelligence
-            </h4> */}
             <h1 className="text-4xl md:text-7xl font-black text-slate-900 dark:text-white leading-[0.95] uppercase tracking-tighter mb-8">
               Navigasi Reputasi di Era <span className="text-red-600">Disrupsi Informasi.</span>
             </h1>
@@ -49,12 +46,11 @@ export default function AboutPage() {
 
         {/* TRACK RECORD: ID & MY */}
         <div className="py-24 border-y border-slate-100 dark:border-white/5 mb-32 relative overflow-hidden">
-          {/* PERBAIKAN: Penambahan z-[-1] dan penyesuaian opacity warna teks latar */}
-          <div className="absolute top-0 right-0 p-8 text-slate-200/40 dark:text-white/[0.03] text-9xl font-black pointer-events-none uppercase z-0 select-none">
+          {/* PERBAIKAN: Font size responsif (text-6xl ke 9xl) dan penyesuaian posisi agar tidak terpotong di mobile */}
+          <div className="absolute -top-4 -right-2 md:top-0 md:right-0 p-4 md:p-8 text-slate-200/50 dark:text-white/[0.03] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black pointer-events-none uppercase z-0 select-none tracking-tighter">
             History
           </div>
           
-          {/* PERBAIKAN: Penambahan z-10 agar konten teks berada di depan */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             <div className="lg:col-span-4 flex items-center gap-4">
                <FaGlobeAmericas className="text-5xl text-red-600" />
