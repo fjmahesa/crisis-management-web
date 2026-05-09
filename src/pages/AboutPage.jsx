@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGlobeAmericas, FaShieldAlt, FaChartBar, FaBolt } from 'react-icons/fa';
+// Import gambar lokal
+import AboutImg from '../assets/about.webp'; 
 
 export default function AboutPage() {
   const values = [
@@ -10,16 +12,19 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="pt-32 pb-24 bg-white dark:bg-[#050505] transition-colors duration-700 min-h-screen font-sans">
+    <main className="pt-20 lg:pt-5 pb-24 bg-white dark:bg-[#050505] transition-colors duration-700 min-h-screen font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* HERO SECTION ABOUT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="lg:col-span-7"
           >
+            {/* <h4 className="text-red-600 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
+              // Corporate_Profile_Intelligence
+            </h4> */}
             <h1 className="text-4xl md:text-7xl font-black text-slate-900 dark:text-white leading-[0.95] uppercase tracking-tighter mb-8">
               Navigasi Reputasi di Era <span className="text-red-600">Disrupsi Informasi.</span>
             </h1>
@@ -28,25 +33,32 @@ export default function AboutPage() {
             </p>
           </motion.div>
           
+          {/* FOTO DENGAN POTONGAN POLIGONAL (TANPA BINGKAI MERAH) */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="lg:col-span-5 flex items-center justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.9, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="lg:col-span-5 flex items-center justify-center lg:justify-end relative group"
           >
-            <div className="relative w-full max-w-md aspect-square bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 overflow-hidden group">
+            {/* Container Utama Gambar */}
+            <div className="relative w-full max-w-md aspect-[4/5] bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 overflow-hidden transition-all duration-700 shadow-2xl"
+                 style={{ clipPath: 'polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)' }}>
+              
+              {/* Gambar Utama (Lokal) */}
               <img 
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" 
-                alt="Command Center" 
-                className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000"
+                src={AboutImg} 
+                alt="ICM Strategic Team" 
+                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-in-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-red-600/20 to-transparent"></div>
+              
+              {/* Overlay Gradasi Halus */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 transition-opacity duration-700"></div>
             </div>
           </motion.div>
         </div>
 
         {/* TRACK RECORD: ID & MY */}
         <div className="py-24 border-y border-slate-100 dark:border-white/5 mb-32 relative overflow-hidden">
-          {/* PERBAIKAN: Font size responsif (text-6xl ke 9xl) dan penyesuaian posisi agar tidak terpotong di mobile */}
           <div className="absolute -top-4 -right-2 md:top-0 md:right-0 p-4 md:p-8 text-slate-200/50 dark:text-white/[0.03] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black pointer-events-none uppercase z-0 select-none tracking-tighter">
             History
           </div>
