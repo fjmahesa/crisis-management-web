@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
+import ScrollToTop from './components/ScrollToTop';
 
 // Placeholder halaman lain
 const Services = () => <div className="p-20 text-center">Halaman Layanan</div>;
@@ -11,6 +12,7 @@ const Services = () => <div className="p-20 text-center">Halaman Layanan</div>;
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />
         <Routes>
