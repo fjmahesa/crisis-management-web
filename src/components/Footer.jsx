@@ -12,7 +12,7 @@ export default function Footer() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <footer className="transition-colors duration-700 bg-white dark:bg-[#050505] border-t border-slate-100 dark:border-white/5 pt-24 pb-12 px-6 overflow-hidden font-sans">
+    <footer className="transition-colors duration-700 bg-white dark:bg-[#050505] border-t border-slate-300 dark:border-white/5 pt-24 pb-12 px-6 overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
 

@@ -111,9 +111,9 @@ export default function Hero() {
             
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent"></div>
             
-            <div className="absolute bottom-8 right-12 font-mono text-[7px] text-white/50 tracking-[0.4em] uppercase hidden md:block">
+            {/* <div className="absolute bottom-8 right-12 font-mono text-[7px] text-white/50 tracking-[0.4em] uppercase hidden md:block">
               {theme === 'dark' ? 'POLITICAL_WAR_ROOM // ACTIVE' : 'STRATEGIC_MONITORING // ACTIVE'}
-            </div>
+            </div> */}
           </div>
         </motion.div>
 
