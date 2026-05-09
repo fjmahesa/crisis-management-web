@@ -38,7 +38,7 @@ export default function Layanan() {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-6 relative transition-colors duration-700 bg-slate-50 dark:bg-[#050505] border-b border-slate-100 dark:border-white/5">
+    <section id="services" className="py-20 md:py-32 px-6 relative transition-colors duration-700 bg-slate-50 dark:bg-[#050505] border-b border-slate-100 dark:border-white/5">
       <div className="max-w-6xl mx-auto"> {/* Mengurangi max-width agar grid 2x2 terlihat lebih compact */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}

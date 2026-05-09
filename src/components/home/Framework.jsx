@@ -61,7 +61,7 @@ export default function Framework() {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-slate-50 dark:bg-[#080808] transition-colors duration-700 overflow-hidden">
+    <section id="framework" className="py-24 px-6 md:px-12 bg-slate-50 dark:bg-[#080808] transition-colors duration-700 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         <motion.div 

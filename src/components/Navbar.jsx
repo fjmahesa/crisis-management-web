@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// Ganti NavHashLink menjadi HashLink untuk menghindari error isActive
+import { HashLink as Link } from 'react-router-hash-link'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
-import { FaSun, FaMoon, FaShieldAlt } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Update Menu sesuai Dokumen Konsep
   const navLinks = [
-    { name: 'Home', path: '/' },
+    { name: 'Home', path: '/#' },
     { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Crisis Framework', path: '/framework' },
-    { name: 'Insights', path: '/insights' },
+    { name: 'Services', path: '/#services' },
+    { name: 'Crisis Framework', path: '/#framework' },
+    { name: 'Contact Us', path: '/#cta' },
   ];
 
   return (
@@ -34,7 +34,12 @@ export default function Navbar() {
       }`}>
       
       {/* LOGO AREA */}
-      <Link to="/" className="z-[110] flex items-center gap-2" onClick={() => setIsOpen(false)}>
+      <Link 
+        smooth 
+        to="/#" 
+        className="z-[110] flex items-center gap-2" 
+        onClick={() => setIsOpen(false)}
+      >
         <img 
           src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
           alt="ICM Logo" 
@@ -45,12 +50,14 @@ export default function Navbar() {
       {/* RIGHT SIDE */}
       <div className="flex items-center gap-2 md:gap-8">
         
-        {/* DESKTOP LINKS - Menggunakan font mono yang tegas */}
+        {/* DESKTOP LINKS */}
         <div className="hidden lg:flex items-center gap-8 font-mono text-[10px] tracking-[0.15em] uppercase font-bold">
           {navLinks.map((link) => (
             <Link 
+              smooth
               key={link.name} 
               to={link.path} 
+              // className kembali menjadi string biasa untuk menghindari prop isActive
               className="text-slate-500 dark:text-white/60 hover:text-red-600 transition-colors relative group"
             >
               {link.name}
@@ -68,19 +75,10 @@ export default function Navbar() {
             {theme === 'dark' ? <FaSun size={12} /> : <FaMoon size={12} />}
           </button>
 
-          {/* CTA: KONTAK DARURAT / KONSULTASI RAHASIA
-          <Link 
-            to="/contact" 
-            className="hidden md:flex items-center gap-2 bg-red-600 text-white px-5 py-2 hover:bg-red-700 transition-all font-black text-[10px] uppercase tracking-widest shadow-lg shadow-red-600/20"
-          >
-            <FaShieldAlt className="text-[12px]" />
-            Konsultasi Rahasia
-          </Link> */}
-
           {/* HAMBURGER (Mobile) */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-[110] relative"
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-[110] relative text-slate-900 dark:text-white"
           >
             <span className={`w-5 h-0.5 transition-all duration-300 absolute ${isOpen ? 'rotate-45 bg-red-600' : '-translate-y-1 bg-current'}`}></span>
             <span className={`w-5 h-0.5 transition-all duration-300 absolute ${isOpen ? 'opacity-0' : 'opacity-100 bg-current'}`}></span>
@@ -101,18 +99,20 @@ export default function Navbar() {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link 
+                  smooth
                   key={link.name}
                   to={link.path} 
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-bold uppercase tracking-tighter border-b border-slate-50 dark:border-white/5 py-3 hover:text-red-600"
+                  className="text-lg font-bold uppercase tracking-tighter border-b border-slate-50 dark:border-white/5 py-3 hover:text-red-600 text-slate-900 dark:text-white"
                 >
                   {link.name}
                 </Link>
               ))}
               <Link 
-                to="/contact" 
+                smooth
+                to="/#cta" 
                 onClick={() => setIsOpen(false)}
-                className="mt-4 bg-red-600 text-white w-full py-4 text-center font-black text-[11px] tracking-widest uppercase"
+                className="mt-4 bg-red-600 text-white w-full py-4 text-center font-black text-[11px] tracking-widest uppercase shadow-lg shadow-red-600/20"
               >
                 Mulai Konsultasi
               </Link>
