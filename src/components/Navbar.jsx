@@ -23,7 +23,7 @@ export default function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/#services' },
     { name: 'Crisis Framework', path: '/#framework' },
-    { name: 'Contact Us', path: '/#cta' },
+    { name: 'Contact Us', path: '/#contact' },
   ];
 
   return (

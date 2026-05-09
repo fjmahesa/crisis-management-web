@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
 import ScrollToTop from './components/ScrollToTop';
+import NotFound from './pages/NotFound';
 
 // Placeholder halaman lain
 const Services = () => <div className="p-20 text-center">Halaman Layanan</div>;
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>
