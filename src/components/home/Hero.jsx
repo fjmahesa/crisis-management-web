@@ -63,7 +63,7 @@ export default function Hero() {
             className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tighter leading-[0.95] text-[#0F172A] dark:text-white uppercase"
           >
             MENGENDALIKAN KRISIS. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-red-900 dark:from-red-500 dark:to-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-600 to-red-900 dark:from-red-600">
               MELINDUNGI REPUTASI. 
             </span>
           </motion.h1>
