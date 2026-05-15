@@ -1,6 +1,6 @@
 import React from 'react';
 // Ganti import Link biasa menjadi NavHashLink
-import { NavHashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import {
