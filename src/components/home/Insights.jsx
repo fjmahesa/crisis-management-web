@@ -33,7 +33,7 @@ export default function Insights() {
     <section className="py-24 px-6 md:px-12 bg-white dark:bg-[#050505] transition-colors duration-700">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
+        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <motion.h4 
@@ -59,7 +59,7 @@ export default function Insights() {
           </motion.button>
         </div>
 
-        {/* Article Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {articles.map((post, i) => (
             <motion.article 
@@ -70,7 +70,7 @@ export default function Insights() {
               onClick={() => setActiveArticle(i)}
               className="group cursor-pointer"
             >
-              {/* Image Container */}
+              
               <div className="relative aspect-[16/10] overflow-hidden mb-6 bg-slate-100 dark:bg-white/5">
                 <motion.img 
                   src={post.image} 
@@ -86,7 +86,7 @@ export default function Insights() {
                 </div>
               </div>
 
-              {/* Text Content */}
+              
               <div className={`transition-all duration-500 ${activeArticle === i ? 'pl-4 border-l-2 border-red-600' : 'pl-0 border-l-0'}`}>
                 <div className="flex items-center gap-4 mb-3">
                   <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">{post.date}</span>

@@ -14,7 +14,7 @@ function App() {
   const [isMaintenance, setIsMaintenance] = useState(null);
 
   useEffect(() => {
-    // Membaca file konfigurasi dari folder public saat aplikasi pertama kali dimuat
+    
     fetch('/configMaintenanceMode.json')
       .then((response) => {
         if (!response.ok) {
@@ -27,17 +27,17 @@ function App() {
       })
       .catch((error) => {
         console.error('Error fetching config:', error);
-        // Jika file gagal dimuat, aplikasi diasumsikan berjalan normal (false)
+        
         setIsMaintenance(false); 
       });
   }, []);
 
-  // Mencegah konten utama berkedip (flicker) saat browser sedang memuat status JSON
+  
   if (isMaintenance === null) {
     return <div className="min-h-screen bg-white dark:bg-[#050505]" />;
   }
 
-  // Jika status JSON bernilai true, kunci semua rute dan tampilkan halaman pemeliharaan
+  
   if (isMaintenance) {
     return <Maintenance />;
   }

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaTable, FaInfoCircle } from 'react-icons/fa';
 
 export default function DecisionMatrix() {
-  // State untuk melacak baris atau kartu yang sedang aktif di mobile
+  
   const [activeMatrix, setActiveMatrix] = useState(null);
 
   const matrixData = [
@@ -18,7 +18,7 @@ export default function DecisionMatrix() {
     <section className="py-24 px-6 md:px-12 bg-white dark:bg-[#050505] transition-colors duration-700">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
+        
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -36,7 +36,7 @@ export default function DecisionMatrix() {
           </p> */}
         </motion.div>
 
-        {/* Desktop Table View */}
+        
         <div className="hidden md:block overflow-hidden border border-slate-200 dark:border-white/5">
           <table className="w-full text-left border-collapse">
             <thead>
@@ -78,7 +78,7 @@ export default function DecisionMatrix() {
           </table>
         </div>
 
-        {/* Mobile Card View (Updated with Active Logic) */}
+        
         <div className="md:hidden space-y-4">
           {matrixData.map((item, i) => (
             <motion.div 
@@ -114,7 +114,7 @@ export default function DecisionMatrix() {
                 </span>
               </div>
 
-              {/* Indikator Samping Aktif */}
+              
               {activeMatrix === i && (
                 <motion.div 
                   layoutId="activeBar"
@@ -125,7 +125,7 @@ export default function DecisionMatrix() {
           ))}
         </div>
 
-        {/* Footer Note */}
+        
         <div className="mt-12 p-6 border-l-2 border-red-600 bg-slate-50 dark:bg-white/[0.02]">
           <p className="text-[10px] md:text-[11px] text-slate-500 dark:text-slate-400 uppercase leading-relaxed tracking-wider italic">
             "Satu langkah salah dalam merespons bisa memperburuk krisis. Matriks ini memastikan setiap tindakan adalah kalkulasi politik yang presisi."

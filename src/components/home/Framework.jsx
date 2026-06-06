@@ -11,7 +11,7 @@ export default function Framework() {
       title: "Detect Early Signal", 
       desc: "Deteksi isu sebelum viral melalui sistem monitoring real-time.",
       detail: "Menggunakan algoritma pemantauan untuk menangkap percikan percakapan negatif sebelum mencapai titik ledak publik.",
-      // Gambar: Pusat Komando / Pemantauan Data
+      
       bgImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
     },
     { 
@@ -19,7 +19,7 @@ export default function Framework() {
       title: "Identify Source", 
       desc: "Identifikasi apakah organik atau serangan terstruktur.",
       detail: "Analisis mendalam terhadap aktor di balik narasi untuk menentukan strategi respons yang tepat.",
-      // Gambar: Kode/Jaringan Digital
+      
       bgImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" 
     },
     { 
@@ -27,7 +27,7 @@ export default function Framework() {
       title: "Gauge Impact", 
       desc: "Mengukur potensi eskalasi dan dampak reputasi.",
       detail: "Pemetaan risiko sistemik untuk memprediksi seberapa jauh isu ini akan menyebar di berbagai kanal media.",
-      // Gambar: Analisis Grafik/Chart
+      
       bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
     },
     { 
@@ -119,7 +119,7 @@ export default function Framework() {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="relative bg-white dark:bg-slate-900 p-8 md:p-10 border-l-4 border-red-600 shadow-2xl shadow-black/10 min-h-[350px] flex flex-col justify-center overflow-hidden"
             >
-              {/* BACKGROUND IMAGE WITH UPDATED OVERLAY */}
+              
               <div 
                 className="absolute inset-0 z-0 transition-transform duration-1000 ease-out scale-110"
                 style={{ 
@@ -128,14 +128,14 @@ export default function Framework() {
                   backgroundPosition: 'center',
                 }}
               >
-                {/* Overlay: Opacity dikurangi pada mode light (white/80) agar gambar lebih terlihat */}
+                
                 <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/90 backdrop-blur-[1px]"></div>
               </div>
 
               <div className="relative z-10">
                 {/* <span className="font-mono text-red-600 text-[10px] font-bold tracking-[0.3em] mb-3 uppercase flex items-center gap-2">
                   <span className="w-4 h-[1px] bg-red-600"></span>
-                  Phase_0{activeStep + 1} // {steps[activeStep].letter}
+                  Phase_0{activeStep + 1} 
                 </span> */}
                 <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4 tracking-tight leading-none">
                   {steps[activeStep].title}

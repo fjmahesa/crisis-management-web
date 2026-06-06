@@ -26,5 +26,5 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// Custom hook agar lebih mudah digunakan
+
 export const useTheme = () => useContext(ThemeContext);

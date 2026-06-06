@@ -12,7 +12,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
           
-          {/* BAGIAN KIRI: GAMBAR RELEVAN */}
+          
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -20,18 +20,18 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative group"
           >
-            {/* Dekorasi Bingkai Teknis */}
+            
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-red-600 z-10"></div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-slate-200 dark:border-white/10 z-10"></div>
             
-            {/* Image Container */}
+            
             <div className="relative aspect-video lg:aspect-square overflow-hidden bg-slate-900 shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" 
                 alt="Digital Crisis War Room" 
                 className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000 ease-in-out"
               />
-              {/* Overlay Gradient */}
+              
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
               
               {/* Label Floating
@@ -42,7 +42,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* BAGIAN KANAN: TEKS FILOSOFI */}
+          
           <motion.div 
             initial="hidden" 
             whileInView="visible" 

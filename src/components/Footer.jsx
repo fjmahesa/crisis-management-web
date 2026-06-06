@@ -1,5 +1,5 @@
 import React from 'react';
-// Ganti import Link biasa menjadi NavHashLink
+
 import { HashLink as Link } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
@@ -12,7 +12,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { theme, toggleTheme } = useTheme();
 
-  // Samakan navLinks dengan yang ada di Navbar
+  
   const navLinks = [
     { name: 'Home', path: '/#' },
     { name: 'About', path: '/about' },
@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
 
-          {/* KOLOM 1: BRAND & MISSION */}
+          
           <div className="md:col-span-5 space-y-8">
             <Link smooth to="/#" className="inline-block group">
               <img
@@ -41,7 +41,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* KOLOM 2: STRATEGIC LINKS (Updated to HashLink) */}
+          
           <div className="md:col-span-3 space-y-6">
             <ul className="space-y-4 text-[10px] font-bold tracking-widest uppercase">
               {navLinks.map((link) => (
@@ -58,12 +58,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* KOLOM 3: DISCREET CONTACT */}
+          
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-slate-900 dark:text-white text-[10px] font-mono tracking-[0.5em] uppercase font-black">Hubungi Kami</h4>
 
             <div className="flex flex-col gap-5">
-              {/* WHATSAPP */}
+              
               <a 
                 href="https://wa.me/6282226644882" 
                 target="_blank" 
@@ -79,7 +79,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              {/* EMAIL */}
+              
               <a 
                 href="mailto:indonesia@crisismanagement.id" 
                 className="flex items-center gap-4 group cursor-pointer"
@@ -93,7 +93,7 @@ export default function Footer() {
                 </div>
               </a>
 
-              {/* INSTAGRAM */}
+              
               <a 
                 href="https://instagram.com/crisismanagement.id" 
                 target="_blank" 
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM TERMINAL */}
+        
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-300 dark:border-white/5 gap-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="text-[9px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest italic">

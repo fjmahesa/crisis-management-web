@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
-// Import dua versi gambar
+
 import headerDark from '../../assets/header-dark.webp';
 import headerLight from '../../assets/header-light.webp';
 
@@ -25,7 +25,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center px-6 md:px-12 py-20 overflow-hidden transition-colors duration-700 bg-[#F8F9FA] dark:bg-[#050505]">
       
-      {/* BACKGROUND ELEMENTS */}
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none text-slate-900 dark:text-white">
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" 
           style={{ 
@@ -37,14 +37,14 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         
-        {/* KOLOM KIRI: TEKS & ACTION (Updated with Document Concepts) */}
+        
         <motion.div
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
           className="text-left"
         >
-          {/* Badge Status */}
+          
           {/* <motion.div 
             variants={fadeIn("up")}
             className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-red-500/30 bg-red-500/5 rounded-full backdrop-blur-md"
@@ -54,7 +54,7 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </span>
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-red-600 dark:text-red-500 font-mono">
-              Intelligence Room // Aktif
+              Intelligence Room 
             </span>
           </motion.div> */}
           
@@ -85,7 +85,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* KOLOM KANAN: GAMBAR DENGAN LOGIKA TEMA */}
+        
         <motion.div
           initial="hidden"
           animate="visible"
@@ -112,7 +112,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent"></div>
             
             {/* <div className="absolute bottom-8 right-12 font-mono text-[7px] text-white/50 tracking-[0.4em] uppercase hidden md:block">
-              {theme === 'dark' ? 'POLITICAL_WAR_ROOM // ACTIVE' : 'STRATEGIC_MONITORING // ACTIVE'}
+              {theme === 'dark' ? 'POLITICAL_WAR_ROOM 
             </div> */}
           </div>
         </motion.div>

@@ -5,7 +5,7 @@ import { FaWhatsapp, FaEnvelope, FaShieldAlt } from 'react-icons/fa';
 export default function CTA() {
   return (
     <section id="contact" className="py-24 px-6 md:px-12 bg-slate-900 dark:bg-red-600 transition-colors duration-700 relative overflow-hidden">
-      {/* Background Decoration */}
+      
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-white rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-red-500 rounded-full blur-[100px]"></div>
@@ -24,7 +24,7 @@ export default function CTA() {
           </div>
 
           {/* <h4 className="text-red-500 dark:text-red-200 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-6 italic">
-            // Secure_Communication_Initiated
+            
           </h4> */}
           
           <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.95] mb-8">

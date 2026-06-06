@@ -10,35 +10,35 @@ export default function WhyChooseUs() {
       icon: <FaClock />,
       title: "Respons Cepat 24/7",
       desc: "Krisis tidak mengenal jam kerja. Tim kami siaga penuh untuk memitigasi isu sebelum menjadi berita utama.",
-      // Hanya sedikit rotasi untuk kesan presisi jam
+      
       hoverAnim: { rotate: 15, scale: 1.1 }
     },
     {
       icon: <FaUserSecret />,
       title: "Confidential & Discreet",
       desc: "Privasi adalah prioritas tertinggi. Seluruh operasi dilakukan dengan protokol kerahasiaan ketat.",
-      // Geser sedikit ke atas untuk kesan 'menghilang/rahasia'
+      
       hoverAnim: { y: -5, opacity: 0.8 }
     },
     {
       icon: <FaChartLine />,
       title: "Framework Berbasis Data",
       desc: "Kami menggunakan metrik digital untuk mengukur sentimen publik secara akurat.",
-      // Skala halus tanpa looping yang mengganggu
+      
       hoverAnim: { scale: 1.15, y: -2 }
     },
     {
       icon: <FaShieldAlt />,
       title: "Pengalaman Krisis Politik",
       desc: "Berpengalaman menangani dinamika politik digital yang agresif dan isu kebijakan publik.",
-      // Sedikit rotasi pelindung
+      
       hoverAnim: { rotate: -10, x: 2 }
     },
     {
       icon: <FaMicrochip />,
       title: "Teknologi Intelijen",
       desc: "Menggunakan tools monitoring canggih untuk mendeteksi pola serangan buzzer terstruktur.",
-      // Skala minimalis
+      
       hoverAnim: { scale: 1.1, rotate: 5 }
     }
   ];
@@ -78,14 +78,14 @@ export default function WhyChooseUs() {
                   ${isFocused ? 'bg-slate-900 border-red-600/50 shadow-2xl' : 'group hover:bg-slate-900 hover:border-red-600/50'}
                 `}
               >
-                {/* --- BACKGROUND DECORATION ICON (Watermark) --- */}
+                
                 <div className={`absolute right-[-5%] bottom-[-10%] text-[160px] pointer-events-none transition-all duration-700 
                   ${isFocused ? 'opacity-10 scale-105 text-white' : 'opacity-[0.04] dark:opacity-[0.05] text-slate-900 dark:text-white group-hover:opacity-10 group-hover:scale-105 group-hover:text-white'}
                 `}>
                   {item.icon}
                 </div>
 
-                {/* Ikon Utama - Animasi diselaraskan agar lebih subtle */}
+                
                 <motion.div 
                   className={`mb-auto text-2xl transition-colors duration-500 relative z-10
                     ${isLarge ? 'text-red-500' : (isFocused ? 'text-red-500' : 'text-red-600 group-hover:text-red-500')}`}
@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
                   </p>
                 </div>
 
-                {/* Subtle Red Glow Overlay */}
+                
                 <div className={`absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/[0.05] transition-opacity duration-500
                   ${isFocused ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                 </div>

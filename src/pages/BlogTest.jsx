@@ -7,7 +7,7 @@ export default function BlogTest() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Mengambil data artikel dari REST API WordPress yang berada di hosting
+    
     fetch('https://admin.crisismanagement.id/wp-json/wp/v2/posts?_embed')
       .then((response) => {
         if (!response.ok) {
@@ -26,7 +26,7 @@ export default function BlogTest() {
       });
   }, []);
 
-  // Tampilan penanda proses memuat data (Loading)
+  
   if (loading) {
     return (
       <main className="min-h-screen bg-white dark:bg-[#050505] flex items-center justify-center font-sans">
@@ -37,7 +37,7 @@ export default function BlogTest() {
     );
   }
 
-  // Tampilan jika terjadi kesalahan koneksi atau CORS error
+  
   if (error) {
     return (
       <main className="min-h-screen bg-white dark:bg-[#050505] flex items-center justify-center font-sans px-6">
@@ -57,23 +57,23 @@ export default function BlogTest() {
     <main className="pt-32 pb-24 bg-white dark:bg-[#050505] transition-colors duration-700 min-h-screen font-sans">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* HEADER HALAMAN */}
+        
         <div className="border-b border-slate-100 dark:border-white/5 pb-8 mb-16">
           <h4 className="text-red-600 font-mono text-[10px] tracking-[0.5em] uppercase font-bold mb-3 italic">
-            // Connected_Data_Source: Headless_WordPress
+            
           </h4>
           <h1 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
             Arsip Artikel & Publikasi
           </h1>
         </div>
 
-        {/* GRID DAFTAR POST */}
+        
         {posts.length === 0 ? (
           <p className="text-sm text-slate-500 uppercase tracking-wider italic">Tidak ada artikel yang ditemukan.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => {
-              // Mengambil fitur gambar (Featured Image) jika tersedia dari WordPress
+              
               const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
 
               return (
@@ -82,7 +82,7 @@ export default function BlogTest() {
                   className="group flex flex-col justify-between p-6 bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/5 transition-all hover:border-slate-300 dark:hover:border-white/10"
                 >
                   <div>
-                    {/* Wadah Gambar Post */}
+                    
                     <div className="relative w-full aspect-video bg-slate-200 dark:bg-white/5 overflow-hidden mb-6">
                       <img 
                         src={featuredImage || "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=600"} 
@@ -91,24 +91,24 @@ export default function BlogTest() {
                       />
                     </div>
 
-                    {/* Tanggal Post */}
+                    
                     <span className="text-[9px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest block mb-2">
                       {new Date(post.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
 
-                    {/* Judul Post */}
+                    
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white uppercase tracking-tight mb-3 group-hover:text-red-600 transition-colors">
                       {post.title.rendered}
                     </h3>
 
-                    {/* Ringkasan Konten (Excerpt) */}
+                    
                     <div 
                       className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed uppercase tracking-wider line-clamp-3 mb-6"
                       dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                     />
                   </div>
 
-                  {/* Tombol Tautan Selengkapnya */}
+                  
                   <div className="pt-4 border-t border-slate-200/40 dark:border-white/5">
   <Link 
     to={`/blog/${post.slug}`} 

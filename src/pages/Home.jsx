@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import Hero from '../components/home/Hero';
 import Layanan from '../components/home/Layanan';
-// import Insights from '../components/home/Insights';
+
 import CTA from '../components/home/CTA';
 import About from '../components/home/About';
 import Problem from '../components/home/Problem';
@@ -11,7 +11,7 @@ import DecisionMatrix from '../components/home/DecisionMatrix';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 
 export default function Home() {
-  // Kita panggil hook ini di level Page agar transisi warna terasa di seluruh container
+  
   const { theme } = useTheme();
 
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <Framework />
       <DecisionMatrix />
       <WhyChooseUs />
-      {/* <Insights /> */}
+      
       <CTA />
     </main>
   );

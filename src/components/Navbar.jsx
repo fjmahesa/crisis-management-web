@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// Ganti NavHashLink menjadi HashLink untuk menghindari error isActive
+
 import { HashLink as Link } from 'react-router-hash-link'; 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
@@ -33,7 +33,7 @@ export default function Navbar() {
         : 'bg-white dark:bg-[#050505] border-b border-transparent'
       }`}>
       
-      {/* LOGO AREA */}
+      
       <Link 
         smooth 
         to="/#" 
@@ -47,17 +47,17 @@ export default function Navbar() {
         />
       </Link>
 
-      {/* RIGHT SIDE */}
+      
       <div className="flex items-center gap-2 md:gap-8">
         
-        {/* DESKTOP LINKS */}
+        
         <div className="hidden lg:flex items-center gap-8 font-mono text-[10px] tracking-[0.15em] uppercase font-bold">
           {navLinks.map((link) => (
             <Link 
               smooth
               key={link.name} 
               to={link.path} 
-              // className kembali menjadi string biasa untuk menghindari prop isActive
+              
               className="text-slate-500 dark:text-white/60 hover:text-red-600 transition-colors relative group"
             >
               {link.name}
@@ -67,7 +67,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          {/* THEME TOGGLE */}
+          
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:border-red-600 hover:text-red-600 transition-all z-[110]"
@@ -75,7 +75,7 @@ export default function Navbar() {
             {theme === 'dark' ? <FaSun size={12} /> : <FaMoon size={12} />}
           </button>
 
-          {/* HAMBURGER (Mobile) */}
+          
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden flex flex-col justify-center items-center w-8 h-8 z-[110] relative text-slate-900 dark:text-white"
@@ -87,7 +87,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MOBILE DROPDOWN */}
+      
       <AnimatePresence>
         {isOpen && (
           <motion.div 

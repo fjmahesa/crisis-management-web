@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaExclamationTriangle, FaMicrophoneAltSlash, FaUserShield, FaShareAlt, FaNetworkWired } from 'react-icons/fa';
 
 export default function Problem() {
-  // State untuk melacak kartu yang aktif di mobile
+  
   const [activeCard, setActiveCard] = useState(null);
 
   const problems = [
@@ -57,7 +57,7 @@ export default function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              // Trigger state aktif saat di-tap (Mobile)
+              
               onClick={() => setActiveCard(i)}
               className={`relative p-6 md:p-8 border transition-all duration-300 cursor-pointer group overflow-hidden
                 ${activeCard === i 
@@ -65,7 +65,7 @@ export default function Problem() {
                   : 'bg-white dark:bg-white/[0.03] border-slate-200 dark:border-white/5 lg:hover:border-red-600/30 lg:hover:bg-red-600/[0.02]'
                 }`}
             >
-              {/* Dekorasi Glow saat Aktif */}
+              
               {activeCard === i && (
                 <motion.div 
                   layoutId="problemGlow"
@@ -88,7 +88,7 @@ export default function Problem() {
                 {prob.desc}
               </p>
               
-              {/* Indikator Status Aktif di Pojok (Mobile) */}
+              
               <div className={`absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-red-600 transition-opacity lg:hidden
                 ${activeCard === i ? 'opacity-100 animate-pulse' : 'opacity-0'}`}>
               </div>

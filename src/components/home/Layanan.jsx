@@ -39,7 +39,7 @@ export default function Layanan() {
 
   return (
     <section id="services" className="py-20 md:py-32 px-6 relative transition-colors duration-700 bg-slate-50 dark:bg-[#050505] border-b border-slate-100 dark:border-white/5">
-      <div className="max-w-6xl mx-auto"> {/* Mengurangi max-width agar grid 2x2 terlihat lebih compact */}
+      <div className="max-w-6xl mx-auto"> 
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1 }}
@@ -51,7 +51,7 @@ export default function Layanan() {
           </h2>
         </motion.div>
 
-        {/* Layout disesuaikan menjadi grid-cols-2 untuk desktop */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {layananData.map((item, i) => {
             const isActive = activeService === i;
