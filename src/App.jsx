@@ -7,6 +7,8 @@ import AboutPage from './pages/AboutPage';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
 import Maintenance from './pages/Maintenance';
+import BlogTest from './pages/BlogTest';
+import PostDetail from './pages/PostDetail';
 
 function App() {
   const [isMaintenance, setIsMaintenance] = useState(null);
@@ -48,6 +50,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogTest />} />
+          <Route path="/blog/:slug" element={<PostDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
