@@ -14,7 +14,6 @@ function App() {
   const [isMaintenance, setIsMaintenance] = useState(null);
 
   useEffect(() => {
-    
     fetch('/configMaintenanceMode.json')
       .then((response) => {
         if (!response.ok) {
@@ -27,23 +26,21 @@ function App() {
       })
       .catch((error) => {
         console.error('Error fetching config:', error);
-        
         setIsMaintenance(false); 
       });
   }, []);
 
-  
   if (isMaintenance === null) {
     return <div className="min-h-screen bg-white dark:bg-[#050505]" />;
   }
 
-  
   if (isMaintenance) {
     return <Maintenance />;
   }
 
   return (
     <Router>
+      {/* ScrollToTop menjaga agar rute lain (seperti /about) tetap terbuka dari atas */}
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navbar />

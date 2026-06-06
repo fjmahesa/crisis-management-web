@@ -44,6 +44,7 @@ export default function Navbar() {
           src={theme === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'} 
           alt="ICM Logo" 
           className="h-8 md:h-13 w-auto object-contain"
+          onError={(e) => { e.target.src = '/logo-light.svg'; }}
         />
       </Link>
 
