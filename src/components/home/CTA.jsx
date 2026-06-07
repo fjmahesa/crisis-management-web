@@ -38,7 +38,7 @@ export default function CTA() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
             <motion.a
-              href="https://wa.me/yournumber"
+              href="https://wa.me/6282226644882"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full md:w-auto px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 shadow-2xl hover:bg-red-50 transition-colors"
